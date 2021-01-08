@@ -35,8 +35,7 @@ namespace Day_22
                 }
             }
 
-            bool GameWon = false;
-            while (!GameWon)
+            while (Player1.Count > 0 && Player2.Count > 0)
             {
                 int Player1Card = Player1.Dequeue();
                 int Player2Card = Player2.Dequeue();
@@ -50,11 +49,6 @@ namespace Day_22
                 {
                     Player2.Enqueue(Player2Card);
                     Player2.Enqueue(Player1Card);
-                }
-
-                if (Player1.Count == 0 || Player2.Count == 0)
-                {
-                    GameWon = true;
                 }
             }
 
